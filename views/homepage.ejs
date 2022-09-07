@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Url shortner</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>URL SHORTNER</h1>
+    <form action="/home/create_short_link" method="post">
+        <input type="text" id="url_text" name="url_text" placeholder="Enter url" required><br><br>
+        <input type="submit" value="create short url">
+    </form>
+    <% if (locals.short_url){ %>
+        <a href="<%= short_url %>">
+            <%= short_url %>
+        </a>
+        <% } %>
+</body>
+
+</html>
